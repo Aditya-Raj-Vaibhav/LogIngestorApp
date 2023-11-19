@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Ingestor</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Log Ingestor</h1><hr style="width:90%;position:absolute;">
+    <div class="mainBody">
+        <div id="contentWrapper">
+            <div class="splitLeft">
+                <div id="filteredLogsContainer"></div>
+                <div id="paginationContainer"></div>
+        </div>
+            <div class="splitRight">
+                <div class="filter-container">
+                    <h2>Filters</h2>
+                    <form id="filterForm">
+                        <label for="level">Level:</label>
+                        <input type="text" id="level" name="level">
+
+                        <label for="message">Message:</label>
+                        <input type="text" id="message" name="message">
+
+                        <label for="resourceId">Resource ID:</label>
+                        <input type="text" id="resourceId" name="resourceId">
+
+                        <label for="startDate">Start Date:</label>
+                        <input type="text" id="startDate" name="startDate", placeholder="2023-09-16T08:00:00Z">
+
+                        <label for="endDate">End Date:</label>
+                        <input type="text" id="endDate" name="endDate", placeholder="2023-09-18T08:00:00Z">
+
+                        <label for="traceId">Trace ID:</label>
+                        <input type="text" id="traceId" name="traceId">
+
+                        <label for="spanId">Span ID:</label>
+                        <input type="text" id="spanId" name="spanId">
+
+                        <label for="commit">Commit:</label>
+                        <input type="text" id="commit" name="commit">
+
+                        <label for="parentResourceId">Parent Resource ID:</label>
+                        <input type="text" id="parentResourceId" name="parentResourceId">
+
+                        <button type="button" onclick="applyFilters()">Apply Filters</button>
+                        <button type="button" onclick="clearFilters()">Clear Filters</button>
+                    </form>
+            </div>
+    </div>
+        </div>
+    </div>
+    <br>
+    <script> var logsData = {{ logs | tojson | safe }};</script>
+    <script src="{{ url_for('static', filename='query_functions.js') }}"></script>
+</body>
+</html>

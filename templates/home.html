@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Ingestor</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Log Ingestor App</h1><hr>
+    <ul>
+        <li><h2>To see available logs, visit: <a href="http://127.0.0.1:3000/query">All Logs</a></h2></li>
+        <li><h2>To add more logs, make a <strong><code class="code" style="font-size:20px">POST</code></strong> call like this </h2></li>
+        <pre class="code"><code >
+            curl -X POST -H "Content-Type: application/json" -d '{
+              "level": "info",
+              "message": "Info message",
+              "resourceId": "server-123456",
+              "timestamp": "2023-09-18T08:20:00Z",
+              "traceId": "abc-xyz-12345",
+              "spanId": "span-4565",
+              "commit": "5e5342j",
+              "metadata": {
+                "parentResourceId": "server-1234"
+              }
+            }' http://localhost:3000/ingest
+        </code></pre>
+    </ul>
+</body>
+</html>
