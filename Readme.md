@@ -28,15 +28,19 @@ This section should list any major frameworks/libraries used to bootstrap your p
 ---
 ### Prerequisites
 * `Python3`
-* `flask`
-* `flask_sqlalchemy`
-* `SQLite3`
+* `flask` for developing application using `pip install -U Flask`
+* `flask_sqlalchemy` for database using `pip install -U Flask-SQLAlchemy`
+* `flask_migrate` to migrate table using `pip install Flask-Migrate`
 
 
 ### Usage
 
 * Clone this project using - `git clone https://github.com/dyte-submissions/november-2023-hiring-Aditya-Raj-Vaibhav.git`
 * Come under Flask application directory - `cd <Flask Application Path>`
+* Migrate log table using below commands -
+  * `flask db init`
+  * `flask db migrate`
+  * `flask db upgrade`
 * Run application using -`flask --app app run`
 * See app running on - `http://127.0.0.1:3000`
 

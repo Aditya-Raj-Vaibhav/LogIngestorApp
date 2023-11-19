@@ -1,9 +1,11 @@
 from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///logs.db'
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 def create_app():
     with app.app_context():
@@ -60,8 +62,7 @@ def ingest():
 # Query interface endpoint
 @app.route('/query', methods=['GET'])
 def query():
-    keyword = request.args.get('keyword', '')
-    logs = Log.query.filter(Log.message.contains(keyword)).all()
+    logs = Log.query.all()
     logsDict = [log.to_dict() for log in logs]
     return render_template('query_result.html', logs=logsDict)
 
