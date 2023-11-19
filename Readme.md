@@ -39,9 +39,9 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * Come under Flask application directory - `cd <Flask Application Path>`
 * Run application using -`flask --app app run`
 * See app running on - `http://127.0.0.1:3000`
-* [Log Ingestor Demo](/assets/log-ingestor-demo.mov)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### Demo
+[![Log Ingestor Demo][Log Ingestor.png]][log-ingestor-url]
 
 
 [Python.org]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
@@ -50,4 +50,5 @@ This section should list any major frameworks/libraries used to bootstrap your p
 [Flask-url]: https://flask.palletsprojects.com/
 [SQLite.org]: https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white
 [SQLite-url]: https://www.sqlite.org/
-[log-ingestor]: assets/log-ingestor-demo.mov
+[Log Ingestor.png]: assets/Log%20Ingestor.png
+[log-ingestor-url]: https://github.com/dyte-submissions/november-2023-hiring-Aditya-Raj-Vaibhav/raw/master/assets/log-ingestor-demo.mp4
